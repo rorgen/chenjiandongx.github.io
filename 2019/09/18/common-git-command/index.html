@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+    <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <!--
+        © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+        Version: 1.3.3
+    -->
+    <script>
+window.lsVersion = "1.3.3",
+window.oldVersion = [
+    
+        
+            "0.2.0","0.0.1","0.1.0","1.0.0","1.0.1","1.1.0","1.1.1","1.2.0","1.3.0","1.3.2"
+        
+    
+]
+</script>
+
+    <!-- ### DNS Prefetch ### -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+
+    <!-- ### Preload ### -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+<!-- Title -->
+<title>常用 Git 命令整理 | chenjiandongx&#39;s blog</title>
+
+<!-- favicon -->
+<!-- Favicons -->
+
+    <link rel="icon" type="image/ico" href="/img/fav.ico">
+
+
+
+
+
+
+<!-- Android Chrome Color -->
+
+
+
+<meta name="format-detection" content="telephone=no">
+
+<!-- Description -->
+<meta name="description" content="基本命令">
+
+<!-- Keywords -->
+<meta name="keywords" content=", git">
+
+<!-- Disable Fucking Bloody Baidu Tranformation -->
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!-- ### Import File ### -->
+    
+        <!-- spectre.css -->
+
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css">
+
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style>
+
+<!-- style.css -->
+
+    <link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    
+        <link rel="stylesheet" href="/css/highlight/github.min.css">
+    
+
+
+
+    
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <!-- ### RSS ### -->
+    
+
+    <!-- ### WebApp ### -->
+    <meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="chenjiandongx&#39;s blog">
+<meta name="msapplication-starturl" content="https://chenjiandongx.com">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="chenjiandongx&#39;s blog">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Manifest Import -->
+
+<!-- Open Search -->
+
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="常用 Git 命令整理 | chenjiandongx&#39;s blog">
+<meta property="og:site_name" content="chenjiandongx&#39;s blog">
+
+<meta property="og:locale" content="zh-CN">
+
+<meta property="og:url" content="https://chenjiandongx.com/2019/09/18/common-git-command/">
+<meta property="og:image" content="https://chenjiandongx.com/img/fav.ico">
+
+<meta property="og:description" content="基本命令">
+
+<meta name="twitter:card" content="summary">
+
+
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2019-09-17T16:17:11.829Z">
+    <meta property="article:modified_time" content="2019-09-17T16:17:11.829Z">
+    <meta property="article:author" content="chenjiandongx">
+    <meta property="og:article:tag" content=", git"> 
+
+
+
+
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="https://chenjiandongx.com/2019/09/18/common-git-command/">
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "https://chenjiandongx.com/2019/09/18/common-git-command/",
+    "@type": "BlogPosting",
+    "logo": "https://chenjiandongx.com/img/fav.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://chenjiandongx.com/2019/09/18/common-git-command/"
+    },
+    "headline": "常用 Git 命令整理 | chenjiandongx&#39;s blog",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://chenjiandongx.com/img/fav.ico"
+    },
+    
+    "datePublished": "2019-09-17T16:17:11.829Z",
+    "dateModified": "2019-09-18T15:15:09.781Z",
+    "author": {
+        "@type": "Person",
+        "name": "chenjiandongx",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://chenjiandongx.com/img/avatar.jpg"
+        },
+        "description": "README ME."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "chenjiandongx&#39;s blog",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://chenjiandongx.com/img/fav.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://chenjiandongx.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": ", git",
+    "description": "基本命令"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+
+
+</head>
+
+    <body>
+        
+
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">chenjiandongx&#39;s blog</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                README ME.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">首页</a>
+    
+    
+        <a href="/archives/" class="navbar-link">归档</a>
+    
+    
+        <a href="/search" class="navbar-link">搜索</a>
+    
+    
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    
+    
+
+
+<div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">常用 Git 命令整理</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/avatar.jpg" src="/img/suka-lazyload.gif" alt="chenjiandongx's Avatar">
+        <span>2019-09-18</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/学习笔记/">学习笔记</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">分享本文</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+
+    <!-- QRCode -->
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                            <div id="post-toc">
+                                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本命令"><span class="post-toc-number">1.</span> <span class="post-toc-text">基本命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Git-配置-Github-账号"><span class="post-toc-number">2.</span> <span class="post-toc-text">Git 配置 Github 账号</span></a></li></ol>
+                            </div>
+                        
+                    
+                    <article id="post-content">
+                        <h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">git add file_name                                     # 向暂存区添加文件</span><br><span class="line">git branch                                            # 查看目前git仓库中已有的分支</span><br><span class="line">git branch new_branch_name                            # 创建分支，无分支起点默认在当前提交上创建分支</span><br><span class="line">git branch -d branch_name                             # 删除分支</span><br><span class="line">git branch -D branch_name                             # 强制删除分支</span><br><span class="line">git checkout branch_name                              # 切换分支</span><br><span class="line">git checkout -b branch_name                           # 新建并切换到该分支</span><br><span class="line">git checkout --file_name                             # 丢弃工作区的修改</span><br><span class="line">git commit -m "commit_log"                            # 保存暂存区记录</span><br><span class="line">git commit -am "commit_log"                           # 保存目录中已被跟踪的文件的暂存区记录</span><br><span class="line">git clone remote_repo_url [file_path]                 # 克隆远程仓库到本地</span><br><span class="line">git diff                                              # 比较工作目录和暂存区的差异</span><br><span class="line">git diff HEAD^                                        # 比较工作目录与仓库中最近一次的提交间的差异</span><br><span class="line">git diff -cached                                      # 比较暂存区和仓库中最近一次的提交间的差异</span><br><span class="line">git fetch remote_repo_name                            # 从远程仓库抓取最新数据到本地但不与本地分支进行合并</span><br><span class="line">git init                                              # 初始化仓库</span><br><span class="line">git log                                               # 查看提交日志</span><br><span class="line">git log --pretty=short                                # 只显示提交信息的第一行</span><br><span class="line">git log file_name                                     # 只显示指定目录、文件的日志</span><br><span class="line">git log -p                                            # 显示文件的改动 </span><br><span class="line">git log --graph                                       # 用图形查看</span><br><span class="line">git log --pretty=oneline                              # 查看简要信息</span><br><span class="line">git merge branch_name                                 # 在 master 分支下进行，合并分支</span><br><span class="line">git merge --no-ff -m "merge_log" branch_name          # 禁用 Fast forward 模式，并生成一个 commit</span><br><span class="line">git pull origin branch_name                           # 从远程仓库抓取最新数据并自动与本地分支进行合并</span><br><span class="line">git pull --rebase origin branch_name                  # 第一次拉取的时候先将本地与远程同步</span><br><span class="line">git push origin branch_name                           # 将本地仓库推送到远程仓库中</span><br><span class="line">git push -u origin branch_name                        # 第一次推送时将本地与远程关联起来</span><br><span class="line">git push -f origin branch_name                        # 强制同步远程与本地仓库</span><br><span class="line">git push origin tag_name                              # 将标签推送到远程仓库</span><br><span class="line">git rm file_name                                      # 删除仓库文件</span><br><span class="line">git reset --hard HEAD^                                # 回退到上一个版本</span><br><span class="line">git reset --hard commit_id                            # 回退到指定的版本</span><br><span class="line">git reflog                                            # 查看提交命令</span><br><span class="line">git reset HEAD -- file_name                           # 撤销暂存区具体文件的修改</span><br><span class="line">git remote                                            # 查看本地已经添加的远程仓库</span><br><span class="line">git remote -v                                         # 可以一并查看远程仓库的地址</span><br><span class="line">git remote show remote_repo_name                      # 查看远程仓库信息</span><br><span class="line">git remote add origin remote_repo_url                 # 在本地添加远程仓库</span><br><span class="line">git remote rm remote_repo_name                        # 删除本地添加的远程仓库</span><br><span class="line">git remote rename old_name new_name                   # 重命名远程仓库</span><br><span class="line">git status                                            # 查看仓库状态</span><br><span class="line">git stash                                             # 隐藏工作现场</span><br><span class="line">git stash list                                        # 查看工作现场</span><br><span class="line">git stash apply                                       # 恢复工作现场</span><br><span class="line">git stash drop                                        # 删除 stash 内容</span><br><span class="line">git stash pop                                         # 恢复现场并删除 stash 内容</span><br><span class="line">git show commit -commit_id                            # 查看指定 id 的提交信息</span><br><span class="line">git show -all                                         # 显示提交历史</span><br></pre></td></tr></table></figure>
+
+<h2 id="Git-配置-Github-账号"><a href="#Git-配置-Github-账号" class="headerlink" title="Git 配置 Github 账号"></a>Git 配置 Github 账号</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name "your_name"             # 配置 Github 账号</span><br><span class="line">git config --global user.email "your_email"           # 配置 Github 邮箱</span><br><span class="line">ssh-keygen -t rsa -C "your_email"                     # 设置 ssh key</span><br><span class="line">cat ~/.ssh/id_rsa.pub                                 # 查看 ssh公钥</span><br><span class="line">ssh -T git@github.com                                 # 与 Github 进行验证</span><br></pre></td></tr></table></figure>
+
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">本文最后更新于 <span id="date-expire-num"></span> 天前，文中所描述的信息可能已发生改变</blockquote>
+    <script>
+        var dateUpdate = Date.parse("2019-09-18");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">本文发表于&nbsp;<time datetime="2019-09-17T16:17:11.829Z" itemprop="datePublished">2019-09-18</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+
+<a class="post-categories-list-item" href='/categories/学习笔记/'>学习笔记</a>
+
+</span>
+
+
+
+<span class="post-tags-list mt-2">
+
+
+<a class="post-tags-list-item" href="/tags/git/" rel="tag">#&nbsp;git</a>
+
+</span>
+
+
+</p>
+
+                </div>
+                
+<div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/09/18/python-simple-jump-a-jump/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">教你用 Python 从零开始写出简易版跳一跳外挂</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/09/18/python-magic-decorators/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Python 中两个神奇的装饰器</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span data-year></span>
+        <a class="footer-copyright-a" href="https://chenjiandongx.com">chenjiandongx&#39;s blog</a>
+    </p>
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+            
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+        
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+        
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+
+
+    /* Copyright */
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.querySelector('span[data-year]')
+    
+        copyrightContent.textContent = copyrightNow
+    
+
+
+
+/* Cnosole Log */
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+</script>
+
+<!-- vanilla-lazyload -->
+
+    <script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+
+
+
+    <!-- Busuanzi -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+
+
+
+<!-- gallery.js -->
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+
+    </body>
+
+</html>
