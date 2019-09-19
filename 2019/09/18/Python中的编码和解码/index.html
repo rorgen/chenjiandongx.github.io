@@ -61,7 +61,7 @@ window.oldVersion = [
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 
 <!-- Title -->
-<title>常用 Git 命令整理 | chenjiandongx&#39;s blog</title>
+<title>Python 中的编码和解码 | chenjiandongx&#39;s blog</title>
 
 <!-- favicon -->
 <!-- Favicons -->
@@ -80,10 +80,11 @@ window.oldVersion = [
 <meta name="format-detection" content="telephone=no">
 
 <!-- Description -->
-<meta name="description" content="基本命令">
+<meta name="description" content="把 Unicode 字符转换为二进制数据，使用 encode 方法；把二进制数据转换为 Unicode 字符，使用 decode 方法  
+python3 中的 str 为 unicode 类型，bytes 是包含...">
 
 <!-- Keywords -->
-<meta name="keywords" content=", git">
+<meta name="keywords" content=", python">
 
 <!-- Disable Fucking Bloody Baidu Tranformation -->
 <meta http-equiv="Cache-Control" content="no-transform">
@@ -219,24 +220,25 @@ window.oldVersion = [
 
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="常用 Git 命令整理 | chenjiandongx&#39;s blog">
+    <meta property="og:title" content="Python 中的编码和解码 | chenjiandongx&#39;s blog">
 <meta property="og:site_name" content="chenjiandongx&#39;s blog">
 
 <meta property="og:locale" content="zh-CN">
 
-<meta property="og:url" content="https://chenjiandongx.com/2019/09/18/common-git-command/">
+<meta property="og:url" content="https://chenjiandongx.com/2019/09/18/Python中的编码和解码/">
 <meta property="og:image" content="https://chenjiandongx.com/img/fav.ico">
 
-<meta property="og:description" content="基本命令">
+<meta property="og:description" content="把 Unicode 字符转换为二进制数据，使用 encode 方法；把二进制数据转换为 Unicode 字符，使用 decode 方法  
+python3 中的 str 为 unicode 类型，bytes 是包含...">
 
 <meta name="twitter:card" content="summary">
 
 
     <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2019-09-17T16:17:11.829Z">
-    <meta property="article:modified_time" content="2019-09-17T16:17:11.829Z">
+    <meta property="article:published_time" content="2019-09-17T16:17:11.757Z">
+    <meta property="article:modified_time" content="2019-09-17T16:17:11.757Z">
     <meta property="article:author" content="chenjiandongx">
-    <meta property="og:article:tag" content=", git"> 
+    <meta property="og:article:tag" content=", python"> 
 
 
 
@@ -253,7 +255,7 @@ window.oldVersion = [
 
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="https://chenjiandongx.com/2019/09/18/common-git-command/">
+    <link rel="canonical" href="https://chenjiandongx.com/2019/09/18/Python中的编码和解码/">
 
     <!-- ### Structured Data ### -->
     
@@ -263,22 +265,22 @@ window.oldVersion = [
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "https://chenjiandongx.com/2019/09/18/common-git-command/",
+    "url": "https://chenjiandongx.com/2019/09/18/Python中的编码和解码/",
     "@type": "BlogPosting",
     "logo": "https://chenjiandongx.com/img/fav.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://chenjiandongx.com/2019/09/18/common-git-command/"
+        "@id": "https://chenjiandongx.com/2019/09/18/Python中的编码和解码/"
     },
-    "headline": "常用 Git 命令整理 | chenjiandongx&#39;s blog",
+    "headline": "Python 中的编码和解码 | chenjiandongx&#39;s blog",
     
     "image": {
         "@type": "ImageObject",
         "url": "https://chenjiandongx.com/img/fav.ico"
     },
     
-    "datePublished": "2019-09-17T16:17:11.829Z",
-    "dateModified": "2019-09-18T16:26:16.342Z",
+    "datePublished": "2019-09-17T16:17:11.757Z",
+    "dateModified": "2019-09-19T14:00:54.903Z",
     "author": {
         "@type": "Person",
         "name": "chenjiandongx",
@@ -303,8 +305,9 @@ window.oldVersion = [
         "query-input": "required name=search_term_string"
     },
     
-    "keywords": ", git",
-    "description": "基本命令"
+    "keywords": ", python",
+    "description": "把 Unicode 字符转换为二进制数据，使用 encode 方法；把二进制数据转换为 Unicode 字符，使用 decode 方法  
+python3 中的 str 为 unicode 类型，bytes 是包含..."
 }
 </script>
 
@@ -362,7 +365,7 @@ window.oldVersion = [
                 <!-- # Post Header Info # -->
                 <div class="card-header">
                     
-    <h1 class="card-title h3 mb-2">常用 Git 命令整理</h1>
+    <h1 class="card-title h3 mb-2">Python 中的编码和解码</h1>
 
 
 
@@ -395,14 +398,16 @@ window.oldVersion = [
                     
                         
                             <div id="post-toc">
-                                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本命令"><span class="post-toc-number">1.</span> <span class="post-toc-text">基本命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Git-配置-Github-账号"><span class="post-toc-number">2.</span> <span class="post-toc-text">Git 配置 Github 账号</span></a></li></ol>
+                                <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数接受-str-或-bytes，并总是返回-str-类型，解码（码：二进制）"><span class="post-toc-number">1.</span> <span class="post-toc-text">函数接受 str 或 bytes，并总是返回 str 类型，解码（码：二进制）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数接受-str-或-bytes，并总是返回-bytes-类型，编码"><span class="post-toc-number">2.</span> <span class="post-toc-text">函数接受 str 或 bytes，并总是返回 bytes 类型，编码</span></a></li></ol>
                             </div>
                         
                     
                     <article id="post-content">
-                        <h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">git add file_name                                     # 向暂存区添加文件</span><br><span class="line">git branch                                            # 查看目前git仓库中已有的分支</span><br><span class="line">git branch new_branch_name                            # 创建分支，无分支起点默认在当前提交上创建分支</span><br><span class="line">git branch -d branch_name                             # 删除分支</span><br><span class="line">git branch -D branch_name                             # 强制删除分支</span><br><span class="line">git checkout branch_name                              # 切换分支</span><br><span class="line">git checkout -b branch_name                           # 新建并切换到该分支</span><br><span class="line">git checkout --file_name                              # 丢弃工作区的修改</span><br><span class="line">git commit -m "commit_log"                            # 保存暂存区记录</span><br><span class="line">git commit -am "commit_log"                           # 保存目录中已被跟踪的文件的暂存区记录</span><br><span class="line">git clone remote_repo_url [file_path]                 # 克隆远程仓库到本地</span><br><span class="line">git diff                                              # 比较工作目录和暂存区的差异</span><br><span class="line">git diff HEAD^                                        # 比较工作目录与仓库中最近一次的提交间的差异</span><br><span class="line">git diff -cached                                      # 比较暂存区和仓库中最近一次的提交间的差异</span><br><span class="line">git fetch remote_repo_name                            # 从远程仓库抓取最新数据到本地但不与本地分支进行合并</span><br><span class="line">git init                                              # 初始化仓库</span><br><span class="line">git log                                               # 查看提交日志</span><br><span class="line">git log --pretty=short                                # 只显示提交信息的第一行</span><br><span class="line">git log file_name                                     # 只显示指定目录、文件的日志</span><br><span class="line">git log -p                                            # 显示文件的改动 </span><br><span class="line">git log --graph                                       # 用图形查看</span><br><span class="line">git log --pretty=oneline                              # 查看简要信息</span><br><span class="line">git merge branch_name                                 # 在 master 分支下进行，合并分支</span><br><span class="line">git merge --no-ff -m "merge_log" branch_name          # 禁用 Fast forward 模式，并生成一个 commit</span><br><span class="line">git pull origin branch_name                           # 从远程仓库抓取最新数据并自动与本地分支进行合并</span><br><span class="line">git pull --rebase origin branch_name                  # 第一次拉取的时候先将本地与远程同步</span><br><span class="line">git push origin branch_name                           # 将本地仓库推送到远程仓库中</span><br><span class="line">git push -u origin branch_name                        # 第一次推送时将本地与远程关联起来</span><br><span class="line">git push -f origin branch_name                        # 强制同步远程与本地仓库</span><br><span class="line">git push origin tag_name                              # 将标签推送到远程仓库</span><br><span class="line">git rm file_name                                      # 删除仓库文件</span><br><span class="line">git reset --hard HEAD^                                # 回退到上一个版本</span><br><span class="line">git reset --hard commit_id                            # 回退到指定的版本</span><br><span class="line">git reflog                                            # 查看提交命令</span><br><span class="line">git reset HEAD -- file_name                           # 撤销暂存区具体文件的修改</span><br><span class="line">git remote                                            # 查看本地已经添加的远程仓库</span><br><span class="line">git remote -v                                         # 可以一并查看远程仓库的地址</span><br><span class="line">git remote show remote_repo_name                      # 查看远程仓库信息</span><br><span class="line">git remote add origin remote_repo_url                 # 在本地添加远程仓库</span><br><span class="line">git remote rm remote_repo_name                        # 删除本地添加的远程仓库</span><br><span class="line">git remote rename old_name new_name                   # 重命名远程仓库</span><br><span class="line">git status                                            # 查看仓库状态</span><br><span class="line">git stash                                             # 隐藏工作现场</span><br><span class="line">git stash list                                        # 查看工作现场</span><br><span class="line">git stash apply                                       # 恢复工作现场</span><br><span class="line">git stash drop                                        # 删除 stash 内容</span><br><span class="line">git stash pop                                         # 恢复现场并删除 stash 内容</span><br><span class="line">git show commit -commit_id                            # 查看指定 id 的提交信息</span><br><span class="line">git show -all                                         # 显示提交历史</span><br></pre></td></tr></table></figure>
+                        <p>把 Unicode 字符转换为二进制数据，使用 encode 方法；把二进制数据转换为 Unicode 字符，使用 decode 方法  </p>
+<p>python3 中的 str 为 unicode 类型，bytes 是包含原始的 8 位值，在 python3 中 str 和 bytes 不会等价，即使是空字符串也不行  </p>
+<h3 id="函数接受-str-或-bytes，并总是返回-str-类型，解码（码：二进制）"><a href="#函数接受-str-或-bytes，并总是返回-str-类型，解码（码：二进制）" class="headerlink" title="函数接受 str 或 bytes，并总是返回 str 类型，解码（码：二进制）"></a>函数接受 str 或 bytes，并总是返回 str 类型，<strong>解码（码：二进制）</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">to_str</span><span class="params">(bytes_or_str)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> isinstance(bytes_or_str, bytes):</span><br><span class="line">        value = bytes_or_str.decode(<span class="string">'utf-8'</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        value = bytes_or_str</span><br><span class="line">    <span class="keyword">return</span> bytes_or_str</span><br></pre></td></tr></table></figure>
 
-<h2 id="Git-配置-Github-账号"><a href="#Git-配置-Github-账号" class="headerlink" title="Git 配置 Github 账号"></a>Git 配置 Github 账号</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name "your_name"             # 配置 Github 账号</span><br><span class="line">git config --global user.email "your_email"           # 配置 Github 邮箱</span><br><span class="line">ssh-keygen -t rsa -C "your_email"                     # 设置 ssh key</span><br><span class="line">cat ~/.ssh/id_rsa.pub                                 # 查看 ssh公钥</span><br><span class="line">ssh -T git@github.com                                 # 与 Github 进行验证</span><br></pre></td></tr></table></figure>
+<h3 id="函数接受-str-或-bytes，并总是返回-bytes-类型，编码"><a href="#函数接受-str-或-bytes，并总是返回-bytes-类型，编码" class="headerlink" title="函数接受 str 或 bytes，并总是返回 bytes 类型，编码"></a>函数接受 str 或 bytes，并总是返回 bytes 类型，<strong>编码</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">to_bytes</span><span class="params">(bytes_or_str)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> isinstance(bytes_or_str, str):</span><br><span class="line">        value = bytes_or_str.encode(<span class="string">'utf-8'</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        value = bytes_or_str</span><br><span class="line">    <span class="keyword">return</span> bytes_or_str</span><br></pre></td></tr></table></figure>
 
 
                     </article>
@@ -424,9 +429,9 @@ window.oldVersion = [
     </script>
 
 
-<p class="post-footer-info mb-0 pt-0">本文发表于&nbsp;<time datetime="2019-09-17T16:17:11.829Z" itemprop="datePublished">2019-09-18</time>
+<p class="post-footer-info mb-0 pt-0">本文发表于&nbsp;<time datetime="2019-09-17T16:17:11.757Z" itemprop="datePublished">2019-09-18</time>
 
-    , 最后修改于&nbsp;<time datetime="2019-09-18T16:26:16.342Z" itemprop="dateModified">2019-09-19</time>
+    , 最后修改于&nbsp;<time datetime="2019-09-19T14:00:54.903Z" itemprop="dateModified">2019-09-19</time>
 
 </p>
 <p class="post-footer-info mb-0 pt-2">
@@ -443,7 +448,7 @@ window.oldVersion = [
 <span class="post-tags-list mt-2">
 
 
-<a class="post-tags-list-item" href="/tags/git/" rel="tag">#&nbsp;git</a>
+<a class="post-tags-list-item" href="/tags/python/" rel="tag">#&nbsp;python</a>
 
 </span>
 
@@ -457,9 +462,9 @@ window.oldVersion = [
     <!-- Prev Nav -->
     
         <li class="page-item page-prev">
-            <a href="/2019/09/18/python-simple-jump-a-jump/" rel="prev">
+            <a href="/2019/09/18/Python中的并行和并发/" rel="prev">
                 <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
-                <div class="page-item-subtitle">教你用 Python 从零开始写出简易版跳一跳外挂</div>
+                <div class="page-item-subtitle">Python 中的并行与并发</div>
             </a>
         </li>
     
@@ -467,9 +472,9 @@ window.oldVersion = [
     <!-- Next Nav -->
     
         <li class="page-item page-next">
-            <a href="/2019/09/18/python-two-decorators/" rel="next">
+            <a href="/2019/09/18/B站异步爬虫初体验/" rel="next">
                 <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
-                <div class="page-item-subtitle">Python 中两个神奇的装饰器</div>
+                <div class="page-item-subtitle">B 站异步爬虫初体验</div>
             </a>
         </li>
     
